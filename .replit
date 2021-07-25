@@ -1,4 +1,6 @@
 #run java 
 #run = "javac -classpath .:/run_dir/junit-4.12.jar:target/dependency/* -d . BOJ1271.java \n java -classpath .:/run_dir/junit-4.12.jar:target/dependency/* Main"
 #run python
-run="python Python/BOJ1271.py" 
+run="python Python/greedyprac2.py" 
+#run c++
+#run = "g++ C++/hello.cpp -o hello && ./hello"
