@@ -1,6 +1,6 @@
 # 문제 목적: connected component를 찾는게 목적
 #벌써 어렵다...
-
+from collections import deque
 #DFS로 특정 노드를 방문하고 연결돈 모든 노드들도 방문
 def dfs(x,y):
   #주어진 범위를 벗어나는 경우에는 즉시 종료
@@ -17,8 +17,6 @@ def dfs(x,y):
     dfs(x,y+1)
     return True
   return False
-
-
 N,M = map(int,input().split()) #N: 세로 , M: 가로
 graph=[]
 #visited = [[False]* M for _ in range(N)]
@@ -38,6 +36,8 @@ result=0
 for i in range(N):
   for j in range(M):
     #현재 위치에서 DFS 실행
+    # if dfs(i,j)==True:
+    #   result+=1
     if dfs(i,j)==True:
       result+=1
 
