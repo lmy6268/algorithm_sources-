@@ -1,6 +1,6 @@
 #run java 
 #run = "javac -classpath .:/run_dir/junit-4.12.jar:target/dependency/* -d . BOJ1271.java \n java -classpath .:/run_dir/junit-4.12.jar:target/dependency/* Main"
 #run python
-run="python Python/이코테/DFS_BFS/maze.py" 
+run="python Python/백준문풀/BFS/ABCDE.py" 
 #run c++
 #run = "g++ C++/hello.cpp -o hello && ./hello"
