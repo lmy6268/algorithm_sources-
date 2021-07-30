@@ -25,24 +25,24 @@
 # print(0)
 
 import sys
-e,d=0,0
-res=0
+e,d=0,0 #e는 edge정보를 담고, d는 깊이의 정보를 담는 변수
+res=0 #최종적으로 출력할 답을 담는 변수
 
 def dfs(v,depth):
-  global e,d,res
+  global e,d,res #전역변수를 가져와 사용
 
-  if(depth==5):
-    res=1
-    return
+  if(depth==5):#만약 깊이가 5라면 탈출
+    res=1 #관계가 형성되므로 1을 출력
+    return #함수 종료
 
-  if(depth>d):
-    e=v
-    d=depth
+  if(depth>d): #탐색 중에 더 깊이가 깊은 관계를 찾은 경우
+    e=v #e 업데이트
+    d=depth #d 업데이트 
 
-  for i in range(len(graph[v])):
-    if not visited[graph[v][i]]:
-      if res: break
-      visited[v]=True
+  for i in range(len(graph[v])): #현재 노드가 가진 이웃 노드의 간선 수 만큼 루프
+    if not visited[graph[v][i]]: #만약 현재노드의 이웃노드가 방문하지 않은 노드일 경우
+      if res: break  #만약 res값이 1이라면 탐색 무시
+      visited[v]=True 
       dfs(graph[v][i],depth+1)
       visited[v]=False
 
