@@ -1,13 +1,12 @@
 # 문제 목적: connected component를 찾는게 목적
 #벌써 어렵다...
-from collections import deque
 #DFS로 특정 노드를 방문하고 연결돈 모든 노드들도 방문
 def dfs(x,y):
   #주어진 범위를 벗어나는 경우에는 즉시 종료
   if x<=-1 or x>=N or y<=-1 or y>=M:
     return False
   #현재 노드를 방문하지 않았다면
-  if graph[x][y] ==0:
+  if graph[x][y] ==0: 
     #해당 노드 방문 처리
     graph[x][y]=1
     #현재 노드의 상,하,좌,우 노드들도 재귀를 통해 호출
@@ -39,6 +38,6 @@ for i in range(N):
     # if dfs(i,j)==True:
     #   result+=1
     if dfs(i,j)==True:
-      result+=1
+      result+=1 #만들어지는 아이스크림의 갯수 
 
 print(result)#정답 출력
