@@ -46,7 +46,6 @@ def bfs(x,y):
       if graph[nx][ny]==0:
         continue
       if graph[nx][ny]==1:#방문한 노드는 이미 값이 즈
-       
         graph[nx][ny] =graph[x][y]+1
         queue.append((nx,ny))
   return graph[n-1][m-1]
@@ -58,4 +57,5 @@ for i in range(n):
 dx=[-1,1,0,0]
 dy=[0,0,-1,1]
 print(bfs(0,0))
-
+for i in range(n):
+    print(graph[i])
