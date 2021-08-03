@@ -1,4 +1,5 @@
 #수학은 체육과목 입니다
+#배열의 칸수를 비교해가면서 파싱하면 될 것 같은데, 왜 안되는지 모르겠다.
 import sys;p=sys.stdin.readline
 s=p().rstrip()
 volume=1#배열의 칸수를 얼마나 차지하는지
