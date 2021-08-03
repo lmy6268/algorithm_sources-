@@ -1,3 +1,5 @@
+#연결요소의 갯수
+#8.4풀이
 import sys;p=sys.stdin.readline
 from collections import deque
 number=0
