@@ -1,45 +1,33 @@
 # 정렬
-import sys
-p = sys.stdin.readline
-
-
-def sort(array):
-    a = sorted(array.items())
-    for i in a:
-        if isinstance(i[1], list):
-            idx = 0
-            tmp = []
-            for j in range(len(i[1])):
-                if i[1][j] in extension:
-                    i[1][idx], i[1][j] = i[1][j], i[1][idx]
-                    idx += 1
-                    tmp.append(i[1][j])
-        
-            if idx>=2:
-                
-                tmp.sort()
-                for k in range(idx):
-                    i[1][k]=tmp[k]
-    a=dict(a)
-    for key, value in a.items():
-        if isinstance(value, list):
-            for i in value:
-                print(f"{key}.{i}")
-        else:
-            print(f"{key}.{value}")        
-
-
-n, m = map(int, p().rstrip().split())  # n: 파일 개수 / m:확장자 개수
-files = dict()
-extension = []
-for i in range(n):
-    a, b = p().rstrip().split(".")
-    if a in files:
-        tmp = files.get(a)
-        files[a] = [b, tmp]
+import sys;r= sys.stdin.readline;
+from functools import cmp_to_key
+def cmp(x,y): #오름차순 기준 
+    xf,xt=x.split('.'); yf,yt=y.split('.') #f: 파일명, t: 확장자명
+    xused=ext.get(xt);yused=ext.get(yt) #가희 os에서 인식하는지 확인
+    if xf>yf: 
+        return 1
+    elif xf==yf:
+        if xused!=None and yused!=None:
+            if xt>yt:
+                return 1
+            return -1
+        elif xused!=None and yused==None:
+            return -1
+        elif xused==None and yused!=None:
+            return 1
+        else: #위 조건에 해당하지 않을 경우(둘다 가희 os에서 인식 못하는 경우)
+            if xt>yt: 
+                return 1
+            return -1
     else:
-        files[a] = b
+        return -1
+n, m = map(int, r().rstrip().split())  # n: 파일 개수 / m:확장자 개수
+files =[]
+ext = dict()
+for i in range(n):
+    files.append(r().rstrip())
 for i in range(m):
-    extension.append(p().rstrip())
-extension.sort()
-sort(files)
+    ext[r().rstrip()]=i
+files.sort(key=cmp_to_key(cmp))
+for i in files:
+    print(i)
