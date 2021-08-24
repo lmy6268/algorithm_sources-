@@ -25,9 +25,9 @@ n,m=map(int,p().rstrip().split()) #n 나무의 수, m 상근이가 집으로 가
 woods=Counter(map(int,p().split())).items()
 st,en= 0,max(woods)[0] #0 - max 값 범위에서 mid를 계산
 res=0
-while st<=en:
-    mid = (st+en)//2 
-    total=0
+while st<=en: #앞뒤가 역전되려는 순간 종료.
+    mid = (st+en)//2  #중간값 
+    total=0 
     for wood,c in woods:
         if wood>mid:
             total+=(wood-mid)*c
