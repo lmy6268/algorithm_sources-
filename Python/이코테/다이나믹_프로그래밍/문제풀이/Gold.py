@@ -1,3 +1,4 @@
+#Bottom_Up방식
 #내 코드
 '''
 import sys;p=sys.stdin.readline
