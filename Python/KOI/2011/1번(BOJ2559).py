@@ -32,7 +32,7 @@ import sys;p=sys.stdin.readline
 #그리고 성공 / 120ms
 n,k= map(int,p().split()) #온도측정한 날짜 수, 몇일 연속으로 누적합을 계산할 지
 tmp=list(map(int,p().split())) #온도값
-S=sum(tmp[:k]) #0-k까지의 누적합을 구하고 시작
+S=sum(tmp[:k]) #0-k까지의 누적합을 구하고 시작(key point)
 res=S #기존 값과 비교하기 위한 중간 연산에 사용될 변수
 for i in range(1,n-k+1):
     S=S-tmp[i-1]+tmp[i+k-1]
