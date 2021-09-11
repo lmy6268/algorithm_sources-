@@ -1,3 +1,4 @@
+#BOJ10250
 import sys;input=sys.stdin.readline
 for _ in range(int(input())):
     h,w,n=map(int,input().split())
