@@ -24,5 +24,8 @@
     <ClCompile Include="설탕배달.cpp">
       <Filter>소스 파일\단계별 문제풀이\수학</Filter>
     </ClCompile>
+    <ClCompile Include="손익분기점.cpp">
+      <Filter>소스 파일\단계별 문제풀이\수학</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
