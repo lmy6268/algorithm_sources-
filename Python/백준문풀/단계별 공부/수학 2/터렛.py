@@ -13,25 +13,16 @@
 #(3) 교점이 2개 존재
 # - R-r<D<R+r인 경우
 #(4) 교점이 무수히 많을 경우
-# - D=0이면서 r=R인 경우
+# - R-r=D 이면서 R=r인 경우()
 
 import sys; input=sys.stdin.readline
 for _ in range(int(input())):
     x,y,r,X,Y,R=map(int,input().split())
     D=((X-x)**2+(Y-y)**2)**0.5
-    if D==0:
-        if r==R: #case(4)
-            print(-1) 
-        else: #case(1)-2
-            print(0) 
-    elif D>r+R: #case(1)-1
-        print(0) 
-    elif D == R+r: #case(2)-2
-        print(1) 
-    elif D<r+R: 
-        if abs(r-R)< D: #case (3) 
-            print(2) 
-        elif abs(r-R)>D: #case (1)-3
-            print(0)
-        else: #case (2)-1
-            print(1)
+    if D>r+R: print(0) #case (1)-1
+    elif D==r+R: print(1) #case (2)-2
+    elif abs(r-R)<D<r+R:print(2) #case(3)
+    elif abs(r-R)==D:
+        if R==r:print(-1) #case (4)
+        else: print(1) #case (2)-1
+    else: print(0) #case (1)-2,3

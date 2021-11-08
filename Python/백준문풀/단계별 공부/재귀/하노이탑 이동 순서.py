@@ -1,7 +1,7 @@
 import sys;input=sys.stdin.readline;print=sys.stdout.write
 #빠른 알고리즘 = > 캐싱을 이용하셨다..
 def hanoi(lv,sp,ep):
-    dp={}
+    dp={} #중복을 제거하기 위해 set을 사용한다.
     def innerHanoi(lv,sp,ep):
         if (lv,sp,ep) in dp:
             return dp[(lv,sp,ep)]
