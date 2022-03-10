@@ -1,11 +1,10 @@
 import sys;input=sys.stdin.readline
 from itertools import permutations
 n=int(input())
-cnt=[0]*4 #모양 별 갯수
+cnt=[0]*4 #모양 별 갯수(세모,네모,동그라미)
 tmp=list(map(int,input().split()))
 for i in tmp:
-    num=i
-    cnt[num]+=1
+    cnt[i]+=1
 orders=[1,2,3]
 orders=list(map(list,permutations(orders)))
 res=987654321#최종 출력할 최소횟수 / 매 order를 거듭하면서 업데이트 된다.
