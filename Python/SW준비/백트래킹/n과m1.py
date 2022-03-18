@@ -12,14 +12,14 @@
 import sys;input=sys.stdin.readline
 n,m=map(int,input().split())
 arr=[i for i in range(1,m+1)] #기본 리스트 
-visited=[False for _ in range(n+1)] #방문 처리를 위한 리스트 
+visited=[False for _ in range(n+1)] #방문 처리를 위한 리스트(중복을 허용하지 않으므로)
 def dfs(n,m,depth): #길이와 고르는 개수 , 깊이
     global arr,visited
     if depth==m: #깊이가 우리가 원하는 개수와 같은 경우
         for i in arr: #깊이 만큼 arr에서 꺼냄
             print(i,end=" ") 
         print()
-        return
+        return #처리하지 않으면 계속해서 들어가게 된다.
     #목표 깊이에 아직 도달하지 못한 경우 
     for i in range(n):
         if not visited[i]: #방문하지 않은 노드인 경우

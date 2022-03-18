@@ -1,45 +1,115 @@
-from collections import deque
-import sys
-input = sys.stdin.readline
-n, m = map(int, input().split())
-graph = [list(map(int, input().rstrip())) for i in range(n)]
-# 상하좌우 탐색
-dx = [0, 0, 1, -1]
-dy = [1, -1, 0, 0]
-count = 0
-# def bfs(x,y):
-#     #아이스크림을 만들 수 없는 공간인 경우 False를 반환
+# import sys;input=sys.stdin.readline
+# T=int(input())
+# arr=[list(map(int,input().split())) for i in range(T)]
+# cnt=0
+# for i in arr:
+#     if i.count(1)>=2:
+#         cnt+=1
+# print(cnt)
 
-#     if graph[x][y]==1:
-#         return False
-#     q=deque()
-#     q.append((x,y))
-#     while q:
-#         x,y=q.popleft()
-#         graph[x][y]=1
-#         for i in range(4):
-#             nx=x+dx[i]
-#             ny=y+dy[i]
-#             if nx>=0 and nx<n and ny>=0 and ny<m and graph[nx][ny]==0:
-#                 q.append((nx,ny))
-#     return True
+
+# import sys;input=sys.stdin.readline
+# letters=len(list(set(list(input().rstrip()))))
+# if letters%2==0:
+#     print("CHAT WITH HER!")
+# else:
+#     print("IGNORE HIM!")
+
+
+# #Soldier and Bananas
+# import sys;input=sys.stdin.readline
+# k,n,w=map(int,input().split())
+# for i in range(1,w+1):
+#     n-=(k*i)
+# if n>=0:
+#     print(0)
+# else:
+#     print(abs(n))
+
+# #Beautiful Year
+# yr=int(input())
+# idx=yr+1
+# while(True):
+#     if len(list(set(str(idx))))==4:
+#         print(idx)
+#         break
+#     idx+=1
+
+#Games
+# from collections import deque
+# import sys
+# input = sys.stdin.readline
+# n = int(input())
+# teams = [tuple(map(int, input().split())) for _ in range(n)]
+
+# ex=[]
+# host=0
+# cnt=0
+# matches=0;idx=0
+# while (True):
+#     host=guest.popleft()
+#     if host in ex:
+#         break
+#     for i in guest:
+#         if host[0]==i[1]:
+#             cnt+=1
+#     ex.append(host)
+#     guest.append(host)
+#     matches+=1
+# print(cnt)
+
+
+#GAMES
+# import sys
+# input = sys.stdin.readline
+# n = int(input())
+# teams = [tuple(map(int, input().split())) for _ in range(n)]
+# j = 0
+# res=0
 # for i in range(n):
-#     for j in range(m):
-#         if bfs(i,j)==True:
-#             count+=1
-# print(count)
+#     j = 0
+#     while j < n:
+#         if teams[i][0] == teams[j][1]:
+#             res += 1
+#         if j == i-1 and i !=n-1:
+#             j += 2
+#         else :j+=1
+# print(res)
 
 
-def dfs(x, y):
-    if x >= 0 and x < n and y >= 0 and y < m and graph[x][y] == 0:
-        graph[x][y] = 1
-        for v in range(4):
-            dfs(x+dx[v], y+dy[v])
-        return True
-    return False
+# #16진수
+# import sys;input=sys.stdin.readline
+# h=[str(i) for i in range(10)]+[chr(i+64) for i in range(1,7)]
+# A=input().rstrip()
+# sum=0
+# for i in range(len(A),0,-1):
+#     sum+= h.index(A[len(A)-i]) * 16 **(i-1)
+# print(sum)
 
-for i in range(n):
-    for j in range(m):
-        if dfs(i, j) == True:
-            count += 1
-print(count)
+import sys;input=sys.stdin.readline
+a=int(input())
+arr=[int(input()) for i in range(a)]
+for i in range(a):
+    res=[]
+    for j in range(arr[i]-1,0,-1):
+        for k in range(j-1,0,-1):
+            if k+j==arr[i]:
+                res.append(f"{k} {j}")
+    print(f"Pairs for {arr[i]}:",", ".join(res),sep=" ")
+# i=0
+# while a!=0:
+#     i+=1
+    
+#     res=""
+#     a*=3
+#     if a%2:
+#         a=(a+1)//2
+#         res="odd"
+#     else:
+#         a//=2
+#         res="even"
+#     a=(a*3)//9
+#     print(f"{i}. {res} {a}")
+#     a=int(input())
+
+    

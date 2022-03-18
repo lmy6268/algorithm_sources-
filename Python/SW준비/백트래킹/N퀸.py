@@ -10,8 +10,6 @@ def isCrossed(x):
         if row[x]==row[i] or abs(row[x]-row[i])==abs(x-i):
             return False
     return True 
-
-
 def n_queens(x):
     global ans
     if x==N:
